@@ -21,10 +21,11 @@ const Home = ({ correoUsuario }) => {
       const { name, value } = e.target;
       setUsuario({ ...usuario, [name]: value })
    }
+
    const guardarDatos = async (e) => {
       e.preventDefault();
-      console.log(usuario);
-      setUsuario(...valorInicial)
+     console.log(usuario);
+      setUsuario({...valorInicial})
    }
 
    return (
