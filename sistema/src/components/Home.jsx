@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import appfirebase from '../credenciales';
 import { getAuth, signOut } from 'firebase/auth';
+import { getFirestore, collection,addDoc, getDocs, doc,deleteDoc, getDoc, setDoc } from "firebase/firestore";
 
 const auth = getAuth(appfirebase);
+const db = getFirestore(appfirebase);
 
 
 const Home = ({ correoUsuario }) => {
@@ -24,7 +26,14 @@ const Home = ({ correoUsuario }) => {
 
    const guardarDatos = async (e) => {
       e.preventDefault();
-     console.log(usuario);
+     /* console.log(usuario); */
+     try {
+      await addDoc(collection(db,'usuarios'),{
+         ...usuario
+      })
+     } catch (error) {
+      console.log(error);
+     }
       setUsuario({...valorInicial})
    }
 
