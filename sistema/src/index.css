@@ -1,4 +1,13 @@
 .tamaño__imagen {
-   width: 100%;
-   height: 500px;
+    width: 100%;
+    height: 500px;
+}
+
+.botonMio {
+    background-color: red;
+    border: none;
+}
+
+.botonMio:hover {
+    background-color: rgb(205, 242, 0) !important;
 }
